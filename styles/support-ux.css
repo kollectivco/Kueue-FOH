@@ -1,0 +1,816 @@
+/**
+ * Support System Enhanced UX Styles
+ * Beautiful animations, transitions, and interactive elements
+ */
+
+/* ===== Smooth Animations ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Support Card Enhancements ===== */
+.support-card {
+  background: white;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInUp 0.4s ease-out;
+}
+
+.support-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.support-card-active {
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: linear-gradient(135deg, rgba(239, 246, 255, 0.5) 0%, white 100%);
+}
+
+/* ===== Ticket Status Badges ===== */
+.ticket-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+}
+
+.ticket-status-open {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  color: #ea580c;
+  border: 2px solid #fed7aa;
+}
+
+.ticket-status-in-progress {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #2563eb;
+  border: 2px solid #bfdbfe;
+}
+
+.ticket-status-resolved {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: #16a34a;
+  border: 2px solid #bbf7d0;
+}
+
+.ticket-status-closed {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+}
+
+/* ===== Chat Message Bubbles ===== */
+.chat-message {
+  animation: slideInRight 0.3s ease-out;
+  transition: all 0.2s ease;
+}
+
+.chat-message:hover {
+  transform: translateX(-2px);
+}
+
+.chat-bubble-user {
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  color: white;
+  padding: 0.875rem 1.25rem;
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.chat-bubble-support {
+  background: white;
+  color: #1f2937;
+  padding: 0.875rem 1.25rem;
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chat-bubble-bot {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: #7c3aed;
+  padding: 0.875rem 1.25rem;
+  border-radius: 18px 18px 18px 4px;
+  border: 1px solid #d8b4fe;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+/* ===== Quick Action Buttons ===== */
+.support-quick-action {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.support-quick-action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 14px;
+}
+
+.support-quick-action:hover::before {
+  opacity: 1;
+}
+
+.support-quick-action:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.support-quick-action-blue {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #bfdbfe;
+}
+
+.support-quick-action-blue:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.2);
+}
+
+.support-quick-action-green {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: #bbf7d0;
+}
+
+.support-quick-action-green:hover {
+  border-color: #4ade80;
+  box-shadow: 0 12px 24px rgba(34, 197, 94, 0.2);
+}
+
+.support-quick-action-purple {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  border-color: #e9d5ff;
+}
+
+.support-quick-action-purple:hover {
+  border-color: #c084fc;
+  box-shadow: 0 12px 24px rgba(168, 85, 247, 0.2);
+}
+
+.support-quick-action-orange {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  border-color: #fed7aa;
+}
+
+.support-quick-action-orange:hover {
+  border-color: #fb923c;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.2);
+}
+
+/* ===== Loading States ===== */
+.support-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 12px;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.support-loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== Empty States ===== */
+.support-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  animation: scaleIn 0.4s ease-out;
+}
+
+.support-empty-icon {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border-radius: 50%;
+  color: #9ca3af;
+}
+
+/* ===== Knowledge Base Cards ===== */
+.kb-article-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.kb-article-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.kb-article-card:hover .kb-article-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.kb-article-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Priority Indicators ===== */
+.priority-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.priority-critical {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  color: #dc2626;
+  border: 1px solid #fca5a5;
+}
+
+.priority-high {
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%);
+  color: #ea580c;
+  border: 1px solid #fdba74;
+}
+
+.priority-medium {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #d97706;
+  border: 1px solid #fcd34d;
+}
+
+.priority-low {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #16a34a;
+  border: 1px solid #86efac;
+}
+
+/* ===== Search Bar Enhancement ===== */
+.support-search {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.support-search:focus-within {
+  transform: translateY(-2px);
+}
+
+.support-search input {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.support-search input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.support-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* ===== Category Pills ===== */
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: white;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-pill:hover {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+}
+
+.category-pill-active {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+/* ===== Success States ===== */
+.support-success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #86efac;
+  border-radius: 12px;
+  color: #166534;
+  animation: slideInUp 0.4s ease-out;
+}
+
+.support-success-icon {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.375rem;
+  background: white;
+  border-radius: 50%;
+  color: #16a34a;
+}
+
+/* ===== Rating Stars ===== */
+.rating-stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.rating-star {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.375rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rating-star:hover,
+.rating-star-active {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-color: #fbbf24;
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
+/* ===== Notification Badge ===== */
+.notification-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0.125rem 0.375rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+/* ===== Tooltip ===== */
+.support-tooltip {
+  position: relative;
+}
+
+.support-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  padding: 0.5rem 0.75rem;
+  background: #1f2937;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.support-tooltip:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+/* ===== Responsive Enhancements ===== */
+@media (max-width: 768px) {
+  .support-card {
+    padding: 1rem;
+  }
+
+  .support-quick-action {
+    padding: 1rem;
+  }
+
+  .chat-bubble-user,
+  .chat-bubble-support,
+  .chat-bubble-bot {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .kb-article-card {
+    padding: 1rem;
+  }
+}
+
+/* ===== Floating AI Chat Button ===== */
+.floating-ai-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 50;
+}
+
+.floating-ai-button-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+  opacity: 0.75;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.floating-ai-button-main {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.floating-ai-button:hover .floating-ai-button-main {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(147, 51, 234, 0.5);
+}
+
+.floating-ai-button:active .floating-ai-button-main {
+  transform: scale(1.05);
+}
+
+.floating-ai-button-icon {
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.floating-ai-button:hover .floating-ai-button-icon {
+  transform: rotate(12deg) scale(1.1);
+}
+
+.floating-ai-sparkle {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  color: #fbbf24;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+.floating-ai-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  animation: bounce 1s infinite;
+}
+
+/* ===== Slide Panel ===== */
+.ai-chat-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ai-chat-panel.open {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+  .ai-chat-panel {
+    width: 450px;
+  }
+}
+
+.ai-chat-panel-header {
+  height: 4rem;
+  background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-chat-panel-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.ai-chat-panel-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Quick Access Cards Enhancement ===== */
+.support-quick-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.support-quick-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.support-quick-card:hover::before {
+  opacity: 1;
+}
+
+.support-quick-card:hover {
+  transform: translateY(-4px);
+}
+
+.support-quick-card-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.support-quick-card:hover .support-quick-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== AI Assistant Special Card ===== */
+.ai-assistant-highlight-card {
+  background: linear-gradient(135deg, #faf5ff 0%, #eff6ff 100%);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #9333ea, #3b82f6) 1;
+  position: relative;
+}
+
+.ai-assistant-highlight-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(59, 130, 246, 0.05));
+  pointer-events: none;
+}
+
+/* ===== Notification Popup ===== */
+.ai-notification-popup {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.5rem;
+  z-index: 40;
+  animation: slideInUp 0.4s ease-out, bounce 1s ease-in-out 0.5s 3;
+}
+
+.ai-notification-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
+  max-width: 20rem;
+}
+
+/* ===== Tooltip Enhancement ===== */
+.ai-button-tooltip {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #1f2937;
+  color: white;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  transform: translateY(4px);
+}
+
+.floating-ai-button:hover .ai-button-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ai-button-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #1f2937;
+}
+
+/* ===== Minimize Animation ===== */
+.chat-content-minimize {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.chat-content-maximize {
+  height: calc(100vh - 4rem);
+  transition: height 0.3s ease;
+}
+
+/* ===== Header Buttons ===== */
+.panel-header-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.panel-header-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.panel-header-button:active {
+  transform: scale(0.95);
+}
+
+/* ===== Dark Mode Support ===== */
+@media (prefers-color-scheme: dark) {
+  .support-card {
+    background: #1f2937;
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .chat-bubble-support {
+    background: #374151;
+    color: #f3f4f6;
+    border-color: #4b5563;
+  }
+
+  .kb-article-card {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .category-pill {
+    background: #374151;
+    color: #d1d5db;
+  }
+
+  .ai-chat-panel {
+    background: #1f2937;
+  }
+
+  .ai-notification-card {
+    background: #374151;
+    color: #f3f4f6;
+  }
+}

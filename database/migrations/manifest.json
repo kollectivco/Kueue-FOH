@@ -1,0 +1,22 @@
+{
+  "migrations": [
+    {
+      "id": "001",
+      "name": "initial_schema",
+      "description": "Initial database schema with kv_store and profiles tables",
+      "file": "001_initial_schema.sql",
+      "required": true,
+      "version": "1.0.0"
+    },
+    {
+      "id": "002",
+      "name": "storage_bucket",
+      "description": "Storage buckets for organization assets and menu items",
+      "file": "002_storage_bucket.sql",
+      "required": false,
+      "version": "1.0.0"
+    }
+  ],
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-19T00:00:00Z"
+}
